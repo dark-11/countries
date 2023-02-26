@@ -9,6 +9,10 @@ import com.example.network.base.Resource
 import com.example.network.model.CountryStateResponseModel
 import kotlinx.coroutines.*
 
+/**
+ *  CountryDao to expose data to view through viewmodel
+ *
+ */
 class CountryDao (private val repository: CountryRepository, private val networkHelper: NetworkHelper) {
     private val responseOfCountryStates = MutableLiveData<Resource<CountryStateResponseModel>>()
     private val countryStateResponse: LiveData<Resource<CountryStateResponseModel>> = responseOfCountryStates

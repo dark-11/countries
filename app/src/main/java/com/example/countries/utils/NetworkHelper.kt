@@ -4,8 +4,10 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import javax.inject.Inject
 
+/**
+ * Helper network class to detect internet connection
+ */
 class NetworkHelper constructor(private val context: Context) {
 
     fun isNetworkConnected(): Boolean {

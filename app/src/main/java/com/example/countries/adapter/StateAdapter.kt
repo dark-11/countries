@@ -5,6 +5,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.countries.viewholder.StateViewHolder
 import com.example.network.model.CountryStateResponseModel
 
+/**
+ * Adapter class that shows states to view
+ */
 class StateAdapter(private val stateList: Array<CountryStateResponseModel.States>): RecyclerView.Adapter<StateViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StateViewHolder {
         return StateViewHolder.inflate(parent)

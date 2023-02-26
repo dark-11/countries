@@ -13,9 +13,7 @@ import javax.inject.Inject
 
 @ActivityRetainedScoped
 class CountryRepository @Inject constructor(private val countryDataSource: CountryDataSource):BaseRepository() {
-
     suspend fun getData(): Flow<Resource<CountryStateResponseModel>> {
         return flow<Resource<CountryStateResponseModel>> { emit(baseRepositoryResponse { countryDataSource.getData() }) }.flowOn(Dispatchers.IO)
     }
-
 }

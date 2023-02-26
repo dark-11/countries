@@ -10,6 +10,7 @@ abstract class BaseRepository {
 
     suspend fun <T> baseRepositoryResponse(apiCall: suspend () -> Response<T>): Resource<T> {
         try {
+            Resource.Loading<T>(Resource.STATUS.LOADING)
             val response = apiCall()
             if (response.isSuccessful) {
                 val responseBody = response.body()

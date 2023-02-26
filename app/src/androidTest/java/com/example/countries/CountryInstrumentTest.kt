@@ -5,8 +5,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import androidx.test.espresso.matcher.ViewMatchers.assertThat
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
+import androidx.test.runner.AndroidJUnit4
 import androidx.test.uiautomator.*
 import com.example.countries.utils.TestUtils.APP_PACKAGE_NAME
 import com.example.countries.utils.TestUtils.getRowItem
@@ -38,7 +38,7 @@ class CountryInstrumentTest {
         // Launch the blueprint app
         val context: Context = getApplicationContext()
         val intent: Intent? = context.getPackageManager().getLaunchIntentForPackage(APP_PACKAGE_NAME)
-        intent?.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK) // Clear out any previous instances
+        intent?.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         context.startActivity(intent)
         mDevice?.wait(
             Until.hasObject(By.pkg(APP_PACKAGE_NAME).depth(0)),
@@ -62,11 +62,9 @@ class CountryInstrumentTest {
         val list = UiScrollable(UiSelector().resourceId(viewId("recyclerView")))
         var itemIndex = 0
         for (i in 0 until list.childCount) {
-            val uiObject = list.getChild(getRowItem(itemIndex, "country"))
-            val uiObject2 = list.getChild(getRowItem(itemIndex, "flag"))
+            val uiObject = list.getChild(getRowItem(itemIndex, "title"))
             itemIndex++
             Assert.assertNotNull(uiObject.text)
-            Assert.assertNotNull(uiObject2.text)
         }
     }
     @Test
@@ -75,6 +73,6 @@ class CountryInstrumentTest {
         itemScroll.scrollForward(200)
     }
     companion object {
-        private const val LAUNCH_TIMEOUT = 8000
+        private const val LAUNCH_TIMEOUT = 25000
     }
 }

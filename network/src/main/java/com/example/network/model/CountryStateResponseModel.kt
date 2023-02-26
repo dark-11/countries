@@ -2,8 +2,6 @@ package com.example.network.model
 
 import android.os.Parcelable
 import androidx.annotation.Keep
-import androidx.versionedparcelable.ParcelField
-import com.squareup.moshi.JsonClass
 import kotlinx.parcelize.Parcelize
 
 @Keep

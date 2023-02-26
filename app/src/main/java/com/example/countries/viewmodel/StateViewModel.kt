@@ -7,6 +7,9 @@ import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+/**
+ *  ViewModel of StateFragment
+ */
 @HiltViewModel
 class StateViewModel @Inject constructor(): ViewModel() {
     val responseOfStates = MutableLiveData<Boolean>()

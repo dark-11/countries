@@ -69,8 +69,6 @@ class TestCountryStateApiFailure {
         val resultResponse = JsonParser.parseString(json)
         val expectedresponse = JsonParser.parseString(mockedResponse)
 
-
-
         Assert.assertNotNull(response)
         Assert.assertNotEquals(expectedresponse,resultResponse)
     }

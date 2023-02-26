@@ -7,6 +7,9 @@ import com.example.countries.utils.NetworkHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+/**
+ *  ViewModel of CountryFragment
+ */
 @HiltViewModel
 class CountryViewModel @Inject constructor(private val repository: CountryRepository, private val networkHelper: NetworkHelper): ViewModel() {
 

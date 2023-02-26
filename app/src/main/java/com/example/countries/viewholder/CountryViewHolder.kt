@@ -7,6 +7,9 @@ import com.example.countries.databinding.ItemLayoutBinding
 import com.example.countries.visible
 import com.example.network.model.CountryStateResponseModel
 
+/**
+ *  ViewHolder of country to show the data
+ */
 class CountryViewHolder(private val binding:ItemLayoutBinding): RecyclerView.ViewHolder(binding.root) {
     companion object {
         fun inflate(parent:ViewGroup): CountryViewHolder {

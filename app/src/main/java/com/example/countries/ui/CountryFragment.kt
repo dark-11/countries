@@ -21,9 +21,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 @AndroidEntryPoint
 class CountryFragment : Fragment() {
 
